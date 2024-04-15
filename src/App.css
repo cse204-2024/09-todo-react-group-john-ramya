@@ -1,9 +1,8 @@
-body {
-  background-image: url("bgimg.jpg");
+html {
+  background-image: url(bgimg.jpg);
   background-size: cover;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
+  background-repeat: repeat;
+  padding-bottom: 50px;
 }
 header {
   background-color: #fff6c7;

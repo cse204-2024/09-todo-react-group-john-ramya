@@ -7,11 +7,11 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>To Do Items</h1>
+        <h1>John and Ramya's To Do Items</h1>
       </header>
       <section id="todo">
         <NewTodo></NewTodo>
-        <div id="alltodo" class="todo-items">
+        <div id="alltodo" className="todo-items">
           <h2>Your Items</h2>
           <Todo></Todo>
         </div>
