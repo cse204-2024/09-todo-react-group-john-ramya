@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/09-todo-react-group-john-ramya/static/css/main.b301751b.css",
+    "main.js": "/09-todo-react-group-john-ramya/static/js/main.3ebee057.js",
+    "static/media/bgimg.jpg": "/09-todo-react-group-john-ramya/static/media/bgimg.2b8201d3fb9973e8d45d.jpg",
+    "static/media/check.png": "/09-todo-react-group-john-ramya/static/media/check.dcc6e9f44c98bf8ef36c.png",
+    "static/media/logo.svg": "/09-todo-react-group-john-ramya/static/media/logo.cf1ad5ea55bdf7ea6e8c68b1ae6ee00b.svg",
+    "index.html": "/09-todo-react-group-john-ramya/index.html",
+    "main.b301751b.css.map": "/09-todo-react-group-john-ramya/static/css/main.b301751b.css.map",
+    "main.3ebee057.js.map": "/09-todo-react-group-john-ramya/static/js/main.3ebee057.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b301751b.css",
+    "static/js/main.3ebee057.js"
+  ]
+}
