@@ -1,19 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Todo from "./Todo";
+import NewTodo from "./NewTodo";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <h2>Notes</h2>
-        <ul>
-          <li>Use CTRL+C or CMD+C to stop your React server.</li>
-        </ul>
+      <header>
+        <h1>To Do Items</h1>
       </header>
+      <section id="todo">
+        <NewTodo></NewTodo>
+        <div id="alltodo" class="todo-items">
+          <h2>Your Items</h2>
+          <Todo></Todo>
+        </div>
+      </section>
     </div>
   );
 }

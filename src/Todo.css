@@ -1,0 +1,54 @@
+.todo {
+  border: 3px solid #000000;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 10px;
+  height: fit-content;
+  max-width: 70%;
+  height: auto;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  margin: auto;
+  margin-top: 20px;
+  align-content: center;
+}
+.check {
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 3px solid #000000;
+  appearance: none;
+  cursor: pointer;
+  background-color: #ffffff;
+  outline: none;
+}
+
+.todo.completed span {
+  text-decoration: line-through;
+}
+
+.check:checked {
+  background: url("check.png");
+  background-size: cover;
+  border: 3px solid #3be33b;
+  background-position: center;
+}
+
+.delete {
+  padding: 5px 10px;
+  border: 4px solid #ccc;
+  border-radius: 5px;
+  background-color: #ea738d;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: bolder;
+  float: right;
+}
+
+.delete:hover {
+  background-color: #ff0000;
+}
+
+
