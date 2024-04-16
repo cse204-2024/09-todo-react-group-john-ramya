@@ -23,15 +23,29 @@ function Todo() {
     requestForList.send();
   }, []);
 
-  const toggleTodo = (id) => {
-    setTodos(
-      todos.map((todo) => {
-        if (todo.id === id) {
-          return { ...todo, completed: !todo.completed };
-        }
-        return todo;
-      })
+  const toggleTodo = (id, completed) => {
+    let data = { completed: !completed };
+    let requestComplete = new XMLHttpRequest();
+    requestComplete.onreadystatechange = function () {
+      if (this.readyState === 4 && this.status === 200) {
+        // Update the state instead of manipulating the DOM
+        setTodos(
+          todos.map((todo) => {
+            if (todo.id === id) {
+              return { ...todo, completed: !todo.completed };
+            }
+            return todo;
+          })
+        );
+      }
+    };
+    requestComplete.open("PUT", `https://cse204.work/todos/${id}`, true);
+    requestComplete.setRequestHeader("Content-type", "application/json");
+    requestComplete.setRequestHeader(
+      "x-api-key",
+      "c33586-0d1ad7-441820-a69dc2-56942e"
     );
+    requestComplete.send(JSON.stringify(data));
   };
 
   const todoDelete = (id) => {
@@ -61,7 +75,7 @@ function Todo() {
             type="checkbox"
             className="check"
             checked={todo.completed}
-            onChange={() => toggleTodo(todo.id)}
+            onChange={() => toggleTodo(todo.id, todo.completed)}
           />
           <span>{todo.text}</span>
           <button className="delete" onClick={() => todoDelete(todo.id)}>
