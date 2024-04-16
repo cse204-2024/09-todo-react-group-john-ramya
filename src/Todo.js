@@ -34,6 +34,22 @@ function Todo() {
     );
   };
 
+  const todoDelete = (id) => {
+    let requestDelete = new XMLHttpRequest();
+    requestDelete.onreadystatechange = function () {
+      if (this.readyState === 4 && this.status === 200) {
+        setTodos(todos.filter((todo) => todo.id !== id));
+      }
+    };
+    requestDelete.open("DELETE", `https://cse204.work/todos/${id}`, true);
+    requestDelete.setRequestHeader("Content-type", "application/json");
+    requestDelete.setRequestHeader(
+      "x-api-key",
+      "c33586-0d1ad7-441820-a69dc2-56942e"
+    );
+    requestDelete.send();
+  };
+
   return (
     <div>
       {todos.map((todo) => (
@@ -48,7 +64,9 @@ function Todo() {
             onChange={() => toggleTodo(todo.id)}
           />
           <span>{todo.text}</span>
-          <button className="delete">Delete</button>
+          <button className="delete" onClick={() => todoDelete(todo.id)}>
+            Delete
+          </button>
         </div>
       ))}
     </div>
