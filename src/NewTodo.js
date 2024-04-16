@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./NewTodo.css";
 import React, { useState } from "react";
 
