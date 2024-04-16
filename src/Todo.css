@@ -47,8 +47,10 @@
   float: right;
 }
 
+input[type="checkbox"]:focus {
+  border: 4px solid #00f600;
+}
+
 .delete:hover {
   background-color: #ff0000;
 }
-
-

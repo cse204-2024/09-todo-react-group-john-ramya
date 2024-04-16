@@ -29,6 +29,7 @@ function Todo() {
   };
 
   const toggleTodo = (id, completed) => {
+    console.log("toggle");
     let data = { completed: !completed };
     let requestComplete = new XMLHttpRequest();
     requestComplete.onreadystatechange = function () {
