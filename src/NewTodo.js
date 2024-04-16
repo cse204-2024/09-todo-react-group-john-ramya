@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./NewTodo.css";
 import React, { useState } from "react";
 
-function NewTodo() {
+function NewTodo({ onAddTodo }) {
   const [input, setInput] = useState(""); // State to hold the input text
 
   const handleSubmit = (event) => {
@@ -19,6 +19,8 @@ function NewTodo() {
         const todo = JSON.parse(this.responseText);
         setInput("");
         console.log(todo);
+        // Call the onAddTodo function passed from the parent component to update the list
+        onAddTodo(todo);
       } else if (this.readyState === 4) {
         console.log(this.responseText);
         alert("Please enter a todo item before pressing enter or add!");

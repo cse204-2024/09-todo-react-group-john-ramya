@@ -10,7 +10,6 @@ function App() {
         <h1>John and Ramya's To Do Items</h1>
       </header>
       <section id="todo">
-        <NewTodo></NewTodo>
         <div id="alltodo" className="todo-items">
           <h2>Your Items</h2>
           <Todo></Todo>

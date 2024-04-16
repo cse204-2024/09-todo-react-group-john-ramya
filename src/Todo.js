@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./Todo.css";
+import NewTodo from "./NewTodo"; // Import the NewTodo component
 
 function Todo() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
+    fetchTodos();
+  }, []);
+
+  const fetchTodos = () => {
     const requestForList = new XMLHttpRequest();
     requestForList.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -21,7 +26,7 @@ function Todo() {
       "c33586-0d1ad7-441820-a69dc2-56942e"
     );
     requestForList.send();
-  }, []);
+  };
 
   const toggleTodo = (id, completed) => {
     let data = { completed: !completed };
@@ -64,8 +69,16 @@ function Todo() {
     requestDelete.send();
   };
 
+  // Function to add a new todo item
+  const addTodo = (todo) => {
+    setTodos([...todos, todo]);
+  };
+
   return (
     <div>
+      {/* Render the NewTodo component and pass the addTodo function as a prop */}
+      <NewTodo onAddTodo={addTodo} />
+
       {todos.map((todo) => (
         <div
           key={todo.id}
