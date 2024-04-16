@@ -1,8 +1,31 @@
-html {
-  background-color: #d0bdf4;
+/* https://coolors.co/palette/f6bd60-f7ede2-f5cac3-84a59d-f28482 */
+body {
+  /* https://www.magicpattern.design/tools/css-backgrounds */
+  background-color: #f7ede2;
+  opacity: 0.8;
+  background: radial-gradient(
+      circle,
+      transparent 20%,
+      #f7ede2 20%,
+      #f7ede2 80%,
+      transparent 80%,
+      transparent
+    ),
+    radial-gradient(
+        circle,
+        transparent 20%,
+        #f7ede2 20%,
+        #f7ede2 80%,
+        transparent 80%,
+        transparent
+      )
+      25px 25px,
+    linear-gradient(#f5cac3 2px, transparent 2px) 0 -1px,
+    linear-gradient(90deg, #f5cac3 2px, #f7ede2 2px) -1px 0;
+  background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
 }
 header {
-  background-color: #fff6c7;
+  background-color: #f6bd60;
   width: max-content;
   height: max-content;
   margin: auto;
