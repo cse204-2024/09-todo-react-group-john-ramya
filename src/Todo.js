@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Todo.css";
-import NewTodo from "./NewTodo"; // Import the NewTodo component
+import NewTodo from "./NewTodo";
 
 function Todo() {
   const [todos, setTodos] = useState([]);
@@ -33,7 +33,6 @@ function Todo() {
     let requestComplete = new XMLHttpRequest();
     requestComplete.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
-        // Update the state instead of manipulating the DOM
         setTodos(
           todos.map((todo) => {
             if (todo.id === id) {
@@ -69,33 +68,33 @@ function Todo() {
     requestDelete.send();
   };
 
-  // Function to add a new todo item
   const addTodo = (todo) => {
     setTodos([...todos, todo]);
   };
 
   return (
     <div>
-      {/* Render the NewTodo component and pass the addTodo function as a prop */}
       <NewTodo onAddTodo={addTodo} />
       <h2>Your Items</h2>
-      {todos.map((todo) => (
-        <div
-          key={todo.id}
-          className={`todo ${todo.completed ? "completed" : ""}`}
-        >
-          <input
-            type="checkbox"
-            className="check"
-            checked={todo.completed}
-            onChange={() => toggleTodo(todo.id, todo.completed)}
-          />
-          <span>{todo.text}</span>
-          <button className="delete" onClick={() => todoDelete(todo.id)}>
-            Delete
-          </button>
-        </div>
-      ))}
+      {todos
+        .sort((a, b) => a.completed - b.completed)
+        .map((todo) => (
+          <div
+            key={todo.id}
+            className={`todo ${todo.completed ? "completed" : ""}`}
+          >
+            <input
+              type="checkbox"
+              className="check"
+              checked={todo.completed}
+              onChange={() => toggleTodo(todo.id, todo.completed)}
+            />
+            <span>{todo.text}</span>
+            <button className="delete" onClick={() => todoDelete(todo.id)}>
+              Delete
+            </button>
+          </div>
+        ))}
     </div>
   );
 }
