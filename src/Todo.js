@@ -78,7 +78,7 @@ function Todo() {
     <div>
       {/* Render the NewTodo component and pass the addTodo function as a prop */}
       <NewTodo onAddTodo={addTodo} />
-
+      <h2>Your Items</h2>
       {todos.map((todo) => (
         <div
           key={todo.id}

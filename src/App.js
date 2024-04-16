@@ -11,7 +11,6 @@ function App() {
       </header>
       <section id="todo">
         <div id="alltodo" className="todo-items">
-          <h2>Your Items</h2>
           <Todo></Todo>
         </div>
       </section>
